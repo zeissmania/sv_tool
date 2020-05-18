@@ -6,3 +6,5 @@ __pycache__
 hs_err_*
 temp
 *.log
+svtool.egg-info/SOURCES.txt
+svtool.egg-info/PKG-INFO

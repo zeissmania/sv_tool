@@ -47,7 +47,7 @@ def initialize_logger(logfile, name, args, loglevel=logging.DEBUG):
   handler.setFormatter(formatter)
   logger.addHandler(handler)
  
-  logger.info(f"{__name__}: version={__version__}, command={name}, args={args}")
+  logger.info(f"{__name__}: version={__version__}, args={args}")
   return(logger)
 
 def write_r_script(outfilePrefix, rScript, optionMap={}):
