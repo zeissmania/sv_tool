@@ -1,0 +1,4 @@
+include cpdseqer/*.r
+include cpdseqer/*.R
+include cpdseqer/*.Rmd
+include cpdseqer/data/*.*

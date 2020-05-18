@@ -1,0 +1,3 @@
+[console_scripts]
+svtool = svtool.__main__:main
+
