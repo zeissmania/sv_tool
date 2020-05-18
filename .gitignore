@@ -7,3 +7,4 @@ hs_err_*
 temp
 *.log
 svtool.egg-info
+build
