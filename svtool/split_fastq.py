@@ -33,13 +33,15 @@ def split_fastq(logger, inputFileStr, outputFilePrefix, trunkNumber):
     check_file_exists(inputFile)
     
   fileIndex = 0
+  recordPerFile = 0
   for inputFile in inputFiles:
     fileIndex = fileIndex + 1
     logger.info("Processing %s ..." % inputFile)
-    totalLineCount = rawgencount(inputFile)
-    totalRecord = totalLineCount / 4
-    recordPerFile = math.ceil(totalRecord / trunkNumber)
-    logger.info("Total %d reads, each file should have almost %d reads." % (totalRecord, recordPerFile))
+    if recordPerFile == 0:
+      totalLineCount = rawgencount(inputFile)
+      totalRecord = totalLineCount / 4
+      recordPerFile = math.ceil(totalRecord / trunkNumber)
+      logger.info("Total %d reads, each file should have almost %d reads." % (totalRecord, recordPerFile))
     
     with gzip.open(inputFile, "rt") as fin:
       for trunk in range(1, (trunkNumber + 1)):
